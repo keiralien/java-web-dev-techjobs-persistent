@@ -17,4 +17,12 @@
 
 ## Part 3: Test it with SQL
 
+    ALTER TABLE job
+    DROP COLUMN employer
+
 ## Part 4: Test it with SQL
+
+    SELECT DISTINCT s.name, s.description
+    FROm skill s
+    INNER JOIN job_skills js on s.id = js.skills_id
+    ORDER BY s.name
