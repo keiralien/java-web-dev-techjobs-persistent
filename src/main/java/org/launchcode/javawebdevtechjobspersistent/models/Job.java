@@ -3,6 +3,7 @@ package org.launchcode.javawebdevtechjobspersistent.models;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @Entity
@@ -12,10 +13,10 @@ public class Job extends AbstractEntity{
     private Employer employer;
 
     @ManyToMany
+    @NotNull(message = "Must select at least one skill.")
     private List<Skill> skills;
 
-    public Job() {
-    }
+    public Job() {}
 
     public Job(Employer employer, List<Skill> skills) {
         this.employer = employer;
